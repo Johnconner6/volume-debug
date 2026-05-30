@@ -1,6 +1,8 @@
-import os, runpod
+import os
+import runpod
 
 def handler(job):
+    job_input = job.get("input", {})
     result = {}
     result["volume_exists"] = os.path.exists("/runpod-volume")
     try:
